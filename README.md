@@ -6,3 +6,26 @@
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/e4358681-7eca-446d-bd90-6fb5a27c7632)
 
 You have to create 2 EC2 instances (EC2 A and B in the figure), with Amazon Linux AMI, that will work in parallel. Each instance will run a Java application. Instance A will read 10 images from an S3 bucket that we created (https://njit-cs-643.s3.us-east-1.amazonaws.com) and perform object detection in the images. When a car is detected using Rekognition, with confidence higher than 90%, the index of that image (e.g., 2.jpg) is stored in SQS. Instance B reads indexes of images from SQS as soon as these indexes become available in the queue, and performs text recognition on these images (i.e., downloads them from S3 one by one and uses Rekognition for text recognition). Note that the two instances work in parallel: for example, instance A is processing image 3, while instance B is processing image 1 that was recognized as a car by instance A. When instance A terminates its image processing, it adds index -1 to the queue to signal to instance B that no more indexes will come. When instance B finishes, it prints to a file, in its associated EBS, the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index.
+
+# Approached Solution
+
+## Initial Setup
+1) Login to the AWS Academy account with the credentials sent by your professor and go to your course. Access the vocareum learner lab in Modules > Launch AWS Learner Lab.
+2) Start the AWS lab and console and copy the aws_access_key_id, aws_secret_access_key, aws_session_token in AWS Details and paste it into your credentials file in ~/.aws/credentials. The 'config' file has the region (eg. us-east-1 for N. Virginia) and output format (eg. json) stored. 
+3) Along with that download the labsuser.pem file under SSH Key to authenticate later before you can access your EC2 instances through your terminal.
+4) Once you start your lab, open your AWS Management console, search for EC2 under Services, and follow the steps below to create your two instances.
+
+## Creating EC2 Instances That Work Parallely
+1) Once you're in the EC2 page, click on 'Launch Instance' and enter the name of the EC2 instances you want to create.
+2) Under AMI, select 'Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type'.
+3) Select t2.micro as instance type.
+4) Under Key Pair (login), create a new key-pair of type RSA and format .ppk (if you're using PuTTY for SSH, this can also be generated from .pem later using PuTTYgen) or .pem (for OpenSSH).
+5) Under Network settings, edit to create security groups with the following settings.<br>
+    -> SSH with Source type My IP<br>
+    -> HTTP with Source type My IP<br>
+    -> HTTPS with Source type My IP<br>
+6) You can just leave the settings as is, under Configure Storage and Advanced details.
+7) On the right side, under the summary, choose Number of Instances as 2 to launch two EC2 instances in parallel.
+8) Click on Launch Instance to view your instances
+
+   ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/9ed0a825-b6fb-4358-a9a8-d1ce4bd275d8)
