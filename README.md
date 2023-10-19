@@ -19,7 +19,7 @@ You have to create 2 EC2 instances (EC2 A and B in the figure), with Amazon Linu
 1) Once you're in the EC2 page, click on 'Launch Instance' and enter the name of the EC2 instances you want to create.
 2) Under AMI, select 'Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type'.
 3) Select t2.micro as instance type.
-4) Under Key Pair (login), create a new key-pair of type RSA and format .ppk (if you're using PuTTY for SSH, this can also be generated from .pem later using PuTTYgen) or .pem (for OpenSSH).
+4) Under Key Pair (login), create a new key-pair of type RSA and format .ppk (if you're using PuTTY for SSH, this can also be generated from .pem later using PuTTYgen) or .pem (for OpenSSH). Do not forget to save this key safely locally. (For eg. EC2_Key.ppk or .pem which will later be converted)
 5) Under Network settings, edit to create security groups with the following settings.<br>
     -> SSH with Source type My IP<br>
     -> HTTP with Source type My IP<br>
@@ -29,3 +29,7 @@ You have to create 2 EC2 instances (EC2 A and B in the figure), with Amazon Linu
 8) Click on Launch Instance to view your instances
 
    ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/9ed0a825-b6fb-4358-a9a8-d1ce4bd275d8)
+
+## Working with JAVA programs
+1) Once the instances are setup, we will have to create the source code for two different applications. One is to recognize objects and the other is to recognize text. For more details, read the project description.
+2) 
