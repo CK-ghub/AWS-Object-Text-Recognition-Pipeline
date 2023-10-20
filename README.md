@@ -57,5 +57,7 @@ For example replace App.java with ObjectRecognition.java in ObjectRecognition/sr
 3) To upload the JAR file onto your EC2 instance, run the following command by opening a terminal (cmd). 
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/fc6068a4-a121-4d13-9038-dcf48abf660e)<br>
 This will upload and store the JAR file in the root directory of that EC2 instance. Do the same for the other application as well.
-   
+4) We will now SSH into the EC2 instances one by one in individual windows. To SSH into one instance, for example EC2_A, follow the steps below.
+5) Open Putty and in the 'Session' catrgory, enter the public IP address of your EC2 instance in the field.<br>
 
+6) In the connections 
