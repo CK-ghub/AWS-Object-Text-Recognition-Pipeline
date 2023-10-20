@@ -70,7 +70,7 @@ If you get this screen, you've successfully connected to your EC2 instance.
     -> 'sudo yum install java-1.8.0-openjdk'<br>
     -> 'sudo yum install python-pip'<br>
     -> 'pip install awscli'<br>
-    -> 'aws configure' to configure the AWS credentials and access the resources.
+    -> 'aws configure' to configure the AWS credentials and access the resources.<br>
 
 ## Running the Applications on Instances
 1) Finally, once you have everything setup and installed on both instances, you can find your JAR file in your root directory of your instances.
@@ -85,10 +85,17 @@ If you get this screen, you've successfully connected to your EC2 instance.
 3) The queue is also generated in AWS lab as shown below. (In SQS under Services)<br>
 
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/9ac75e78-8587-4fc2-916c-00ac2467fcf0)
-
  <br>
 The messages can also be seen through polling. 6 images are pushed and another one is "-1" to show that the application has finished processing images. (for termination)<br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/068f7e31-294f-4c0d-85d3-2451372f2990)
+<br>
 
 ## TextRecognition on Instance EC2_B
-1) 
+1) As the images are sent to the SQS queue from Instance EC2_A, the images are retrieved from the same SQS and processed for text.
+2) The output of the texts in images are stored in "filename.txt" in the same directory, which can be read to see the final output.
+   The processing and final outputs are shown below. <br>
+   ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/babca7a3-d275-403e-b46d-6a7d8e4d2d31) <br>
+   ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/81dc0d20-be3b-4682-803e-cd27ae7b11b5) <br>
 
+
+   
