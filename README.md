@@ -78,11 +78,12 @@ If you get this screen, you've successfully connected to your EC2 instance.
 3) Parallely run both the applications on two different windows.
 
 ## ObjectRecognition on Instance EC2_A
-1) The images that satisfy the object "Car" and with confidence > 90 are pushed to the SQS queue created in the application.
-2) We can see that 6 images have satisfied the condition and been pushed to the queue. <br>
+1) This application reads images from the S3 bucket that has already been created:- https://njit-cs-643.s3.us-east-1.amazonaws.com
+2) The images that satisfy the object "Car" and with confidence > 90 are pushed to the SQS queue created in the application.
+3) We can see that 6 images have satisfied the condition and been pushed to the queue. <br>
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/87214c94-1784-4c5a-b810-28bfb531c7f3)
 <br>
-3) The queue is also generated in AWS lab as shown below. (In SQS under Services)<br>
+4) The queue is also generated in AWS lab as shown below. (In SQS under Services)<br>
 
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/9ac75e78-8587-4fc2-916c-00ac2467fcf0)
  <br>
@@ -96,6 +97,7 @@ The messages can also be seen through polling. 6 images are pushed and another o
    The processing and final outputs are shown below. <br>
    ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/babca7a3-d275-403e-b46d-6a7d8e4d2d31) <br>
    ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/81dc0d20-be3b-4682-803e-cd27ae7b11b5) <br>
+
 
 
    
