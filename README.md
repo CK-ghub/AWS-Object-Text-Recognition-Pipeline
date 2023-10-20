@@ -58,6 +58,16 @@ For example replace App.java with ObjectRecognition.java in ObjectRecognition/sr
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/fc6068a4-a121-4d13-9038-dcf48abf660e)<br>
 This will upload and store the JAR file in the root directory of that EC2 instance. Do the same for the other application as well.
 4) We will now SSH into the EC2 instances one by one in individual windows. To SSH into one instance, for example EC2_A, follow the steps below.
-5) Open Putty and in the 'Session' catrgory, enter the public IP address of your EC2 instance in the field.<br>
-
-6) In the connections 
+5) Open Putty and in the 'Session' catrgory, enter the public IP address of your EC2 instance in the field.
+6) In the "Connection">"SSH">"Auth">"Credentials" browse and select the PPK Private key file (EC2_Key.ppk).
+7) Click on Open to start the session.
+8) The user will now be prompted to log in. The default username for Amazon Linux and Amazon AMI instances is "ec2-user".<br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/e1e69ea1-e3ea-4137-b889-a92e94566aa9)<br>
+If you get this screen, you've successfully connected to your EC2 instance.
+9) Repeat steps 5 to 8 for the other instance as well.
+10) You'll now install necessary software, including Java, AWS CLI, and the AWS SDK for Java after connecting to EC2 instances via PuTTY on windows, using the following commands in order.<br>
+    -> 'sudo yum update'<br>
+    -> 'sudo yum install java-1.8.0-openjdk'<br>
+    -> 'sudo yum install python-pip'<br>
+    -> 'pip install awscli'<br>
+    -> 'aws configure' to configure the AWS credentials and access the resources.
