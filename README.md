@@ -33,10 +33,18 @@ You have to create 2 EC2 instances (EC2 A and B in the figure), with Amazon Linu
 ## Working with JAVA programs
 1) Once the instances are setup, we will have to create the source code for two different applications. One is to recognize objects and the other is to recognize text. For more details, read the project description.
 2) Once you have the source code ready for both applications (ObjectRecognition.java and TextRecognition.java), we need to package them into executable JAR files.
-3) We will now use Apache Maven to configure and build AWS SDK for the application.
+3) We will now use Apache Maven to configure and build AWS SDK for the application. If you don't have Maven installed, you can visit http://maven.apache.org/ to download the binaries and extract the folders. You need to add the path to the bin folder inside to system variable PATH, to be able to access maven's mvn command. 
 4) To first create a Maven package, open the terminal and run the command below:<br>
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/22770162-5a86-411f-b001-290e78b86fb1)<br>
 Replace org.example.basicapp with the full package namespace of this project, and myapp with the name of this project, which will later become the name of this directory. Repeat the same for the other application. (ObjectRecognition and TextRecognition will be two different folders as packages).
 5) Replace App.java in myapp/src/main/java/org/example/basicapp/ with your source code.<br>
 For example replace App.java with ObjectRecognition.java in ObjectRecognition/src/main/java/com/aws/ec2/ where myapp is 'ObjectRecognition' and org.example.basicapp is 'com.aws.ec2'. Make sure that the name is the same as the public class in your source code.
+6) To configure and use AWS SDK, we ned to declare dependencies in your project's root, the pom.xml file.<br>
+   You can add dependencies using the <dependency> tag under <dependencies> as shown below. <br>
+   ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/82f0ea38-b67d-4644-815f-058bc816128f)<br>
+7) Once we have the dependencies setup, we proceed to create the JAR file.
+8) Package the application using the command 'mvn clean package' followed by 'mvm clean install'.
+9) You need to do the above steps for both the applications. 
+10) We can now test our applications by cd-ing into the target folder where the JAR file is located and use the command 'java -jar YourApplication.jar'. Sometimes the .jar files are stored with version names. You can specify whether or not to have the name in the <build> section in pom.xml and re-package.
+11) In case you get import/package errors while executing the application, in my case, we can alternatively use Apache's m
 
