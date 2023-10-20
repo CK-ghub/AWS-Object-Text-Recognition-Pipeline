@@ -83,9 +83,9 @@ If you get this screen, you've successfully connected to your EC2 instance.
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/87214c94-1784-4c5a-b810-28bfb531c7f3)
 <br>
 3) The queue is also generated in AWS lab as shown below. (In SQS under Services)<br>
-![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/cf376a1e-0b6f-4bb7-ac65-3c7d8d8ad607)<br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/a0765e87-9fe6-4d50-a05a-1dd7c4a9cecd)
+ <br>
 The messages can also be seen through polling. 6 images are pushed and another one is "-1" to show that the application has finished processing images. (for termination)<br>
-![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/2bdcbbc1-14e1-4db4-bb9a-79e7b92fab25)<br>
 
 ## TextRecognition on Instance EC2_B
 1) 
