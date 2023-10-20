@@ -49,8 +49,13 @@ For example replace App.java with ObjectRecognition.java in ObjectRecognition/sr
 11) In case you get import/package errors while executing the application, in my case, we can alternatively use automation tools like Apache Maven that offers plugins. This creates an additional jar with all dependencies. Refer the screenshot below to see the structure. <br>
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/b7ceba01-fe6f-49da-806b-0b26b069b662)<br>
 12) REMEMBER TO CONFIGURE AWS CREDENTIALS IN YOUR LOCAL TERMINAL AS WELL BEFORE RUNNING, to use the services of AWS in your application, using the access_key, secret_access_key and session_token that you copy pasted onto your ~/.aws/credentials file.
-13) If everything runs well, you're good to proceed to the next section.
+13) If everything runs well, you're good to proceed to the next section where you'll upload these JAR files onto your EC2 instances. 
 
-## 
-
+## SSH Access to EC2 Instances (using PuTTY on Windows OS)
+1) Make sure that you have PuTTY installed, else you can visit https://www.putty.org/ to do so. We need PuTTY to use the 'pscp' command.
+2) Upload the ObjectRecognition.jar onto your EC2_A instance and TextRecognition.jar onto your EC2_B instance.
+3) To upload the JAR file onto your EC2 instance, run the following command by opening a terminal (cmd). 
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/fc6068a4-a121-4d13-9038-dcf48abf660e)<br>
+This will upload and store the JAR file in the root directory of that EC2 instance. Do the same for the other application as well.
+   
 
