@@ -71,3 +71,22 @@ If you get this screen, you've successfully connected to your EC2 instance.
     -> 'sudo yum install python-pip'<br>
     -> 'pip install awscli'<br>
     -> 'aws configure' to configure the AWS credentials and access the resources.
+
+## Running the Applications on Instances
+1) Finally, once you have everything setup and installed on both instances, you can find your JAR file in your root directory of your instances.
+2) Use 'java -jar yourjarfile.jar' to run the application.
+3) Parallely run both the applications on two different windows.
+
+## ObjectRecognition on Instance EC2_A
+1) The images that satisfy the object "Car" and with confidence > 90 are pushed to the SQS queue created in the application.
+2) We can see that 6 images have satisfied the condition and been pushed to the queue. <br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/87214c94-1784-4c5a-b810-28bfb531c7f3)
+<br>
+3) The queue is also generated in AWS lab as shown below. (In SQS under Services)<br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/cf376a1e-0b6f-4bb7-ac65-3c7d8d8ad607)<br>
+The messages can also be seen through polling. 6 images are pushed and another one is "-1" to show that the application has finished processing images. (for termination)<br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/2bdcbbc1-14e1-4db4-bb9a-79e7b92fab25)<br>
+
+## TextRecognition on Instance EC2_B
+1) 
+
