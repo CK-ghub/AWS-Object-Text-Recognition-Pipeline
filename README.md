@@ -48,5 +48,9 @@ For example replace App.java with ObjectRecognition.java in ObjectRecognition/sr
 10) We can now test our applications by cd-ing into the target folder where the JAR file is located and use the command 'java -jar YourApplication.jar'. Sometimes the .jar files are stored with version names. You can specify whether or not to have the name in the <build> section in pom.xml and re-package.
 11) In case you get import/package errors while executing the application, in my case, we can alternatively use automation tools like Apache Maven that offers plugins. This creates an additional jar with all dependencies. Refer the screenshot below to see the structure. <br>
 ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/b7ceba01-fe6f-49da-806b-0b26b069b662)<br>
+12) REMEMBER TO CONFIGURE AWS CREDENTIALS IN YOUR LOCAL TERMINAL AS WELL BEFORE RUNNING, to use the services of AWS in your application, using the access_key, secret_access_key and session_token that you copy pasted onto your ~/.aws/credentials file.
+13) If everything runs well, you're good to proceed to the next section.
+
+## 
 
 
