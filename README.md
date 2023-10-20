@@ -46,5 +46,7 @@ For example replace App.java with ObjectRecognition.java in ObjectRecognition/sr
 8) Package the application using the command 'mvn clean package' followed by 'mvm clean install'.
 9) You need to do the above steps for both the applications. 
 10) We can now test our applications by cd-ing into the target folder where the JAR file is located and use the command 'java -jar YourApplication.jar'. Sometimes the .jar files are stored with version names. You can specify whether or not to have the name in the <build> section in pom.xml and re-package.
-11) In case you get import/package errors while executing the application, in my case, we can alternatively use Apache's m
+11) In case you get import/package errors while executing the application, in my case, we can alternatively use automation tools like Apache Maven that offers plugins. This creates an additional jar with all dependencies. Refer the screenshot below to see the structure. <br>
+![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/b7ceba01-fe6f-49da-806b-0b26b069b662)<br>
+
 
