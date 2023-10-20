@@ -98,6 +98,5 @@ The messages can also be seen through polling. 6 images are pushed and another o
    ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/babca7a3-d275-403e-b46d-6a7d8e4d2d31) <br>
    ![image](https://github.com/CK-ghub/AWS-Object-Text-Recognition-Pipeline/assets/69519007/81dc0d20-be3b-4682-803e-cd27ae7b11b5) <br>
 
-
-
-   
+## Conclusion
+You've now learnt to: <br(1) Create VMs (EC2 instances) in the cloud<br>(2) To use cloud storage (S3) in your applications<br>(3) To communicate between VMs using a queue service (SQS)<br>(4) To program distributed applications in Java on Linux VMs in the cloud.<br>(5) To use a machine learning service (AWS Rekognition) in the cloud.
